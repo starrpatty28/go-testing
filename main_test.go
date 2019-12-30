@@ -19,4 +19,9 @@ func TestTableCalculate(t *testing.T) {
 		{99999, 100001},
 	}
 
+	for _, test := range test {
+		if output := Calculate(test.input); output != test.expected {
+			t.Error("Test Failed: {} inputted, {} expected, received: {}", test.input, test.expected, output)
+		}
+	}
 }
